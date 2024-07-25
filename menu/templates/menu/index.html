@@ -1,0 +1,7 @@
+{% extends 'menu/base.html' %}
+{% load draw_menu_tag %}
+
+{% block content %}
+<h2>{{title}}</h2>
+{% draw_menu 'Студент' selected_menu_element %}
+{% endblock %}
