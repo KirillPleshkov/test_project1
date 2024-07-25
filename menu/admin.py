@@ -6,7 +6,7 @@ from menu.models import Menu, MenuElement
 
 @admin.register(Menu)
 class MenuAdmin(admin.ModelAdmin):
-    autocomplete_fields = ('main_menu_element',)
+    ...
 
 
 class ChildrenInline(admin.TabularInline):

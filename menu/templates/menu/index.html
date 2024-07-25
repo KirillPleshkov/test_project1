@@ -3,5 +3,6 @@
 
 {% block content %}
 <h2>{{title}}</h2>
-{% draw_menu 'Студент' selected_menu_element %}
+{% draw_menu 'Меню 1' selected_menu_element_slug %}
+    {% draw_menu 'Меню 2' selected_menu_element_slug %}
 {% endblock %}

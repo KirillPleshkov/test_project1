@@ -4,11 +4,6 @@ from django.db import models
 class Menu(models.Model):
     """Сущность описывающая меню"""
     name = models.CharField(max_length=100, verbose_name='название', unique=True)
-    main_menu_element = models.ForeignKey(
-        'MenuElement',
-        on_delete=models.CASCADE,
-        verbose_name='основной элемент меню'
-    )
 
     class Meta:
         verbose_name = 'меню'

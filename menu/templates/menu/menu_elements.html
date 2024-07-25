@@ -1,17 +1,19 @@
 <ul>
 {% for menu_element in menu_elements %}
-    {% if menu_element %}
-        <li>
-            <a href="{% url 'test_menu_page' menu_element.slug %}">
-                {{ menu_element.text }}
-            </a>
-        </li>
-        {% if menu_element.children %}
-            {% with menu_element.children as menu_elements %}
-                {% include "menu/menu_elements.html" %}
-            {% endwith %}
-        {% endif %}
+    <li>
+        <a href="{% url 'test_menu_page' menu_element.slug %}">
+            {% if menu_element.children or menu_element.slug == selected_element.slug %}
+                -
+            {% else %}
+                +
+            {% endif %}
+            {{ menu_element.text }}
+        </a>
+    </li>
+    {% if menu_element.children %}
+        {% with menu_element.children as menu_elements %}
+            {% include "menu/menu_elements.html" %}
+        {% endwith %}
     {% endif %}
 {% endfor %}
-
 </ul>
